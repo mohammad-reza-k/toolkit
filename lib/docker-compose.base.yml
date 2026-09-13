@@ -7,6 +7,8 @@ services:
         container_name: sharelatex
         volumes:
             - "${OVERLEAF_DATA_PATH}:${OVERLEAF_IN_CONTAINER_DATA_PATH}"
+            - "/home/mohrez/projects/overleaf-5.5.2-source:/overleaf"
+            - "/home/mohrez/projects/overleaf-template-storage:/var/lib/overleaf-template-storage"
         ports:
             - "${OVERLEAF_LISTEN_IP:-127.0.0.1}:${OVERLEAF_PORT:-80}:80"
         environment:
